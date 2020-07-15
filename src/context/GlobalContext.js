@@ -6,7 +6,7 @@ let initialState = {
   data: {
     men: {
       "air-vapormax-flyknit-3": {
-        title: "Nike Air VaporMax Flyknit 3",
+        title: "Air VaporMax Flyknit 3",
         rate: 200,
         imgSrc:
           "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/dicle1kmn9lefvul4umj/air-vapormax-flyknit-3-mens-shoe-JsWsB7.jpg",
