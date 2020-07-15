@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { GlobalContext } from "../context/GlobalContext";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   let {
@@ -21,11 +22,11 @@ export const Home = () => {
       <Grid container spacing={2} style={{ padding: 10 }}>
         {Object.entries(men)
           .filter(([menObj, { showOnHome }]) => showOnHome)
-          .map(([menID, { title, rate, imgSrc, showOnHome }]) => {
+          .map(([proID, { title, rate, imgSrc }]) => {
             return (
-              <Grid key={menID} item xs={12} sm={3}>
+              <Grid key={proID} item xs={12} sm={3}>
                 <Card>
-                  <CardActionArea>
+                  <CardActionArea disableRipple>
                     <CardMedia
                       component="img"
                       alt={title}
@@ -47,9 +48,11 @@ export const Home = () => {
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      Show Details
-                    </Button>
+                    <Link to={`men/${proID}`}>
+                      <Button size="small" color="primary">
+                        Show Details
+                      </Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>
@@ -57,11 +60,11 @@ export const Home = () => {
           })}
         {Object.entries(women)
           .filter(([womenObj, { showOnHome }]) => showOnHome)
-          .map(([womenID, { title, rate, imgSrc, showOnHome }]) => {
+          .map(([proID, { title, rate, imgSrc }]) => {
             return (
-              <Grid key={womenID} item xs={12} sm={3}>
+              <Grid key={proID} item xs={12} sm={3}>
                 <Card>
-                  <CardActionArea>
+                  <CardActionArea disableRipple>
                     <CardMedia
                       component="img"
                       alt={title}
@@ -83,9 +86,11 @@ export const Home = () => {
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      Show Details
-                    </Button>
+                    <Link to={`women/${proID}`}>
+                      <Button size="small" color="primary">
+                        Show Details
+                      </Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>
@@ -93,11 +98,11 @@ export const Home = () => {
           })}
         {Object.entries(kids)
           .filter(([kidObj, { showOnHome }]) => showOnHome)
-          .map(([kidID, { title, rate, imgSrc, showOnHome }]) => {
+          .map(([proID, { title, rate, imgSrc }]) => {
             return (
-              <Grid key={kidID} item xs={12} sm={3}>
+              <Grid key={proID} item xs={12} sm={3}>
                 <Card>
-                  <CardActionArea>
+                  <CardActionArea disableRipple>
                     <CardMedia
                       component="img"
                       alt={title}
@@ -119,9 +124,11 @@ export const Home = () => {
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      Show Details
-                    </Button>
+                    <Link to={`kids/${proID}`}>
+                      <Button size="small" color="primary">
+                        Show Details
+                      </Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>

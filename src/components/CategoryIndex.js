@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { GlobalContext } from "../context/GlobalContext";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export const CategoryIndex = () => {
   let { data } = useContext(GlobalContext);
@@ -19,11 +19,11 @@ export const CategoryIndex = () => {
     <div>
       <h1 style={{ textAlign: "center" }}>{catID.toUpperCase()}</h1>
       <Grid container spacing={2} style={{ padding: 10 }}>
-        {Object.entries(data[catID]).map(([menID, { title, rate, imgSrc }]) => {
+        {Object.entries(data[catID]).map(([proID, { title, rate, imgSrc }]) => {
           return (
-            <Grid key={menID} item xs={12} sm={3}>
+            <Grid key={proID} item xs={12} sm={3}>
               <Card>
-                <CardActionArea>
+                <CardActionArea disableRipple>
                   <CardMedia
                     component="img"
                     alt={title}
@@ -45,9 +45,11 @@ export const CategoryIndex = () => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button size="small" color="primary">
-                    Show Details
-                  </Button>
+                  <Link to={`${proID}`}>
+                    <Button size="small" color="primary">
+                      Show Details
+                    </Button>
+                  </Link>
                 </CardActions>
               </Card>
             </Grid>
