@@ -10,6 +10,7 @@ import { Home } from "./components/Home";
 import { Category } from "./components/Category";
 import { CategoryIndex } from "./components/CategoryIndex";
 import { Product } from "./components/Product";
+import { NotFound } from "./components/NotFound";
 
 function App() {
   const styles = {
@@ -68,6 +69,8 @@ function App() {
             <Route path="/" element={<CategoryIndex />} />
             <Route path=":productID" element={<Product />} />
           </Route>
+          <Route path="not-found" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </GlobalProvider>
