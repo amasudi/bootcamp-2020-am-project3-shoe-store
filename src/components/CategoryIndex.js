@@ -16,9 +16,7 @@ import { NotFound } from "./NotFound";
 export const CategoryIndex = () => {
   let { data } = useContext(GlobalContext);
   const { catID } = useParams();
-  if (data[catID] === null || data[catID] === undefined) {
-    return <NotFound />;
-  }
+  if (data[catID] === null || data[catID] === undefined) return <NotFound />;
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>{catID.toUpperCase()}</h1>

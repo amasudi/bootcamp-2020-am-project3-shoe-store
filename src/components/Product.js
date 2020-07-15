@@ -11,9 +11,8 @@ export const Product = () => {
     data[catID] === undefined ||
     data[catID][productID] === null ||
     data[catID][productID] === undefined
-  ) {
+  )
     return <NotFound />;
-  }
   const { title, rate, imgSrc, desc } = data[catID][productID];
   return (
     <Grid container spacing={2} style={{ padding: 10 }}>
